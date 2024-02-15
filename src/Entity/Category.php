@@ -2,21 +2,22 @@
 
 namespace App\Entity;
 
+use App\Enum\CategoryEnum;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
-class Category
+final class Category
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $name = null;
+    #[ORM\Column(enumType: CategoryEnum::class, length: 50, unique: true)]
+    private ?CategoryEnum $name = null;
 
     #[ORM\OneToMany(targetEntity: Project::class, mappedBy: 'category')]
     private Collection $projects;
@@ -31,12 +32,12 @@ class Category
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): ?CategoryEnum
     {
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(CategoryEnum $name): static
     {
         $this->name = $name;
 
