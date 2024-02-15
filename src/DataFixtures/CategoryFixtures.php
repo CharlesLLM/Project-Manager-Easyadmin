@@ -3,18 +3,23 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
-use App\Enum\CategoryEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 final class CategoryFixtures extends Fixture
 {
     public const REFERENCE_IDENTIFIER = 'category_';
+    public const CATEGORIES = [
+        'Projet personnel',
+        'E-Commerce',
+        'Application mobile',
+        'Veille technologique'
+    ];
 
     public function load(ObjectManager $manager): void
     {
         $i = 1;
-        foreach (CategoryEnum::cases() as $case) {
+        foreach (self::CATEGORIES as $case) {
             $category = new Category();
             $category->setName($case);
 
