@@ -5,10 +5,10 @@ CONSOLE=php bin/console
 start: up db cc
 
 up:
-	$(CONSOLE) serve -d --port=8000
+	symfony serve -d --port=8000
 
 stop:
-	$(CONSOLE) server:stop
+	symfony server:stop
 
 vendor:
 	composer install
