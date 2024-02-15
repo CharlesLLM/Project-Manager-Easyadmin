@@ -21,6 +21,12 @@ final class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
+    public function __toString(): string
+    {
+        return $this->email;
+    
+    }
+
     /**
      * @var string The hashed password
      */
