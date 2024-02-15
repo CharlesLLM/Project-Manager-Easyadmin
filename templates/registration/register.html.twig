@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+        <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-700 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+            <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div class="max-w-md mx-auto">
+                    <div class="w-72">
+                        <h1 class="text-2xl font-semibold">Inscription</h1>
+                    </div>
+                    {% if form_errors(registrationForm) %}
+                        <div role="alert">
+                            <div class="border border-l-4 border-red-400 rounded bg-red-100 px-4 py-3 mt-4 text-red-700">
+                                {{ form_errors(registrationForm) }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="divide-y divide-gray-200">
+                        {{ form_start(registrationForm) }}
+                        <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                            <div class="relative mb-8">
+                                {{ form_row(registrationForm.email) }}
+                            </div>
+                            <div class="relative mb-8">
+                                {{ form_row(registrationForm.plainPassword) }}
+                            </div>
+                            <div class="relative">
+                                <button class="bg-purple-500 hover:bg-purple-600 text-white rounded-md px-4 py-2" type="submit" name="submit">S'inscrire</button>
+                            </div>
+                        </div>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                    <div class="mb-3">
+                        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Le mot de passe doit contenir :</h2>
+                        <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                            <li class="flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="characters-number-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                Au moins 8 caractères
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="uppercase-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                Au moins 1 majuscule
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="lowercase-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                Au moins 1 minuscule
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="digit-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                Au moins 1 chiffre
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="special-char-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                Au moins un caractère spécial, (ex: , ! @ # ?)
+                            </li>
+                        </ul>
+                    </div>
+                    <p>Déjà un compte ? <a href="{{ path('app_login') }}" class="text-purple-500 underline">Se connecter</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function testRegex(regex, value, svg) {
+            if (regex.test(value)) {
+                svg.classList.remove('text-gray-500');
+                svg.classList.add('text-green-500');
+            } else {
+                if (svg.classList.contains('text-green-500')) {
+                svg.classList.remove('text-green-500');
+                svg.classList.add('text-gray-500');
+                }
+            }
+        }
+
+        const passwordInput = document.getElementById('registration_form_plainPassword');
+        const regexLength = /.{8}/;
+        const regexUppercase = /[A-Z]/;
+        const regexLowercase = /[a-z]/;
+        const regexDigit = /[0-9]/;
+        const regexSpecialChar = /[!@#$%^&*\/()_+{}\[\]:;<>,.?~\\-]/;
+        const lengthSVG = document.getElementById('characters-number-svg');
+        const uppercaseSVG = document.getElementById('uppercase-svg');
+        const lowercaseSVG = document.getElementById('lowercase-svg');
+        const digitSVG = document.getElementById('digit-svg');
+        const specialCharSVG = document.getElementById('special-char-svg');
+
+        passwordInput.addEventListener('input', (e) => {
+            testRegex(regexLength, e.target.value, lengthSVG);
+            testRegex(regexUppercase, e.target.value, uppercaseSVG);
+            testRegex(regexLowercase, e.target.value, lowercaseSVG);
+            testRegex(regexDigit, e.target.value, digitSVG);
+            testRegex(regexSpecialChar, e.target.value, specialCharSVG);
+        })
+    </script>
+{% endblock %}
