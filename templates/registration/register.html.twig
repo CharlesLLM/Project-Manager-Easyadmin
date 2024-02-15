@@ -9,7 +9,7 @@
             <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
                 <div class="max-w-md mx-auto">
                     <div class="w-72">
-                        <h1 class="text-2xl font-semibold">Inscription</h1>
+                        <h1 class="text-2xl font-semibold">{{ 'title.register'|trans }}</h1>
                     </div>
                     {% if form_errors(registrationForm) %}
                         <div role="alert">
@@ -28,43 +28,43 @@
                                 {{ form_row(registrationForm.plainPassword) }}
                             </div>
                             <div class="relative">
-                                <button class="bg-purple-500 hover:bg-purple-600 text-white rounded-md px-4 py-2" type="submit" name="submit">S'inscrire</button>
+                                <button class="bg-purple-500 hover:bg-purple-600 text-white rounded-md px-4 py-2" type="submit" name="submit">{{ 'label.register'|trans }}</button>
                             </div>
                         </div>
                         {{ form_end(registrationForm) }}
                     </div>
                     <div class="mb-3">
-                        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Le mot de passe doit contenir :</h2>
+                        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ 'label.password.conditions'|trans }}</h2>
                         <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
                             <li class="flex items-center">
                                 <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="characters-number-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                 </svg>
-                                Au moins 8 caractères
+                                {{ 'label.password.min_length'|trans }}
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="uppercase-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                 </svg>
-                                Au moins 1 majuscule
+                                {{ 'label.password.uppercase'|trans }}
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="lowercase-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                 </svg>
-                                Au moins 1 minuscule
+                                {{ 'label.password.lowercase'|trans }}
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="digit-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                 </svg>
-                                Au moins 1 chiffre
+                                {{ 'label.password.number'|trans }}
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-3.5 h-3.5 mr-2 text-gray-500 dark:text-gray-400 flex-shrink-0" id="special-char-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                 </svg>
-                                Au moins un caractère spécial, (ex: , ! @ # ?)
+                                {{ 'label.password.special'|trans }}
                             </li>
                         </ul>
                     </div>

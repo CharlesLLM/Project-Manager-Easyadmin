@@ -1,0 +1,22 @@
+# Common
+common:
+    name: Nom
+    email: Adresse mail
+    password: Mot de passe
+
+# Title
+title:
+    login: Connexion
+    register: S'inscrire
+
+# Form
+label:
+    login: Se connecter
+    register: S'inscrire
+    password:
+        conditions: "Le mot de passe doit contenir :"
+        min_length: "Au moins 8 caractères"
+        uppercase: "Au moins une majuscule"
+        lowercase: "Au moins une minuscule"
+        number: "Au moins un chiffre"
+        special: "Au moins un caractère spécial, (ex: , ! @ # ?)"

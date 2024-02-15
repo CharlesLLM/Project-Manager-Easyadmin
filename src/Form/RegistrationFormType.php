@@ -18,7 +18,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', TextType::class, [
-                'label' => 'Adresse mail',
+                'label' => 'common.email',
                 'label_attr' => [
                     'class' => 'absolute left-0 -top-5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm'
                 ],
@@ -28,7 +28,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
-                'label' => 'Mot de passe',
+                'label' => 'common.password',
                 'label_attr' => [
                     'class' => 'absolute left-0 -top-5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm'
                 ],
