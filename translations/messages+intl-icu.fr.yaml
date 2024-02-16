@@ -15,6 +15,7 @@ label:
     login: Se connecter
     register: S'inscrire
     logout: Se déconnecter
+    admin: Administration
     password:
         conditions: "Le mot de passe doit contenir :"
         min_length: "Au moins 8 caractères"
