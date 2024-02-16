@@ -28,3 +28,6 @@ fixtures:
 cc:
 	$(CONSOLE) cache:clear --no-warmup
 	$(CONSOLE) cache:warmup
+
+sf-dump:
+	$(CONSOLE) server:dump

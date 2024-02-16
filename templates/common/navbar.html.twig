@@ -6,8 +6,8 @@
                     <p class="block py-2 pl-3 pr-4 text-blue-700 rounded bg-transparent p-0 dark:text-blue-500">{{ 'title.app'|trans }}</a>
                 </li>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
-                    <li class="p-2 border-b-blue-700 border-y-2 border-t-white">
-                        <a href="{{ path('admin_home') }}" class="block py-2 pl-3 pr-4 rounded bg-transparent p-0 dark:text-blue-500 hover:text-blue-600" aria-current="page">{{ 'label.admin'|trans }}</a>
+                    <li class="p-2">
+                        <a href="{{ path('admin') }}" class="block py-2 pl-3 pr-4 rounded bg-transparent p-0 underline dark:text-blue-500 hover:text-blue-600" aria-current="page">{{ 'label.admin'|trans }}</a>
                     </li>
                 {% endif %}
             </ul>
