@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 final class Project
@@ -44,8 +45,8 @@ final class Project
     #[ORM\ManyToMany(targetEntity: Technology::class, inversedBy: 'projects')]
     private Collection $technologies;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?File $thumbnail = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnailPath = null;
 
     public function __construct()
     {
@@ -182,14 +183,14 @@ final class Project
         return $this;
     }
 
-    public function getThumbnail(): ?File
+    public function getThumbnailPath(): ?string
     {
-        return $this->thumbnail;
+        return $this->thumbnailPath;
     }
 
-    public function setThumbnail(?File $thumbnail): static
+    public function setThumbnailPath(?string $thumbnailPath): static
     {
-        $this->thumbnail = $thumbnail;
+        $this->thumbnailPath = $thumbnailPath;
 
         return $this;
     }

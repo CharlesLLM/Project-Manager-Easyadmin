@@ -19,7 +19,11 @@
             </div>
 
             <section class="w-full lg:w-4/5">
-                <h1 class="flex items-center font-bold break-normal text-gray-700 text-xl mt-12 mb-8 lg:mt-0 md:text-2xl">{{ project.name }}</h1>
+                <div class="flex items-center gap-4 font-bold break-normal text-gray-700 text-xl mt-12 mb-8 lg:mt-0 md:text-2xl">
+                    {% set filePath = 'img/projects/' ~ project.thumbnailPath %}
+                    <img src="{{ asset(filePath) }}" alt="{{ project.thumbnailPath }}" class="max-w-32 max-h-16 w-auto h-auto">
+                    <h1>{{ project.name }}</h1>
+                </div>
                 <div class="w-full py-3 px-1">
                     <div class="mb-6">
                         <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.category'|trans }}</h3>
@@ -27,7 +31,7 @@
                     </div>
                     <div class="mb-6">
                         <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.description'|trans }}</h3>
-                        <p>{{ project.description }}</p>
+                        <p>{{ project.description|sanitize_html }}</p>
                     </div>
                     {% if project.link %}
                         <div class="mb-6">
@@ -46,7 +50,7 @@
                 </div>
             </section>
             <div class="w-full lg:w-4/5 lg:ml-auto text-base md:text-sm text-gray-600 py-4">
-                <a href="{{ path('app_project_index') }}" class="text-base md:text-lg text-blue-600 font-bold no-underline hover:underline"><span class="text-base text-blue-600 font-bold">&lt;</span> Retour</a>
+                <a href="{{ path('app_project_index') }}" class="text-base md:text-lg text-blue-600 font-bold hover:underline"><span class="text-base text-blue-600 font-bold">&lt;</span> Retour</a>
             </div>
         </div>
     </div>

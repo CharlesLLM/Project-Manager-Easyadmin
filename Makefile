@@ -1,6 +1,6 @@
 CONSOLE=php bin/console
 
-.PHONY: start up vendor db db-diff fixtures cc stop
+.PHONY: start up vendor folders db db-diff fixtures cc stop
 
 start: up db cc
 
@@ -25,3 +25,6 @@ fixtures:
 cc:
 	$(CONSOLE) cache:clear --no-warmup
 	$(CONSOLE) cache:warmup
+
+folders:
+	mkdir -p public/img/projects
