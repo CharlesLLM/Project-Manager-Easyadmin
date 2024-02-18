@@ -19,15 +19,9 @@ db:
 	$(CONSOLE) doctrine:schema:update --force --complete
 	$(CONSOLE) doctrine:fixtures:load -n
 
-db-diff:
-	$(CONSOLE) doctrine:schema:update --dump-sql
-
 fixtures:
 	$(CONSOLE) doctrine:fixtures:load -n
 
 cc:
 	$(CONSOLE) cache:clear --no-warmup
 	$(CONSOLE) cache:warmup
-
-sf-dump:
-	$(CONSOLE) server:dump
