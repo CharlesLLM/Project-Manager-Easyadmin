@@ -28,10 +28,6 @@ class ProjectController extends AbstractController
     #[Route(path: '/{id}', name: 'app_project_view')]
     public function view(Project $project): Response
     {
-        if ($project === null) {
-            throw $this->createNotFoundException('Projet non trouvé');
-        }
-
         $projects = $this->projectRepository->findAll();
 
         return $this->render('project/view.html.twig', [
