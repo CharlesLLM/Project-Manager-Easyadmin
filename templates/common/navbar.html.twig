@@ -1,23 +1,23 @@
 <nav class="shadow-sm shadow-gray-300 bg-white">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto text-lg">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto text-base lg:text-lg">
         <div class="items-center justify-between md:flex">
-            <ul class="flex flex-row font-medium rounded-lg dark:bg-gray-900 dark:border-gray-700">
+            <ul class="flex flex-row font-medium rounded-lg">
                 <li class="p-2">
-                    <a href="{{ path('app_homepage') }}" class="block py-2 pl-3 pr-4 text-blue-700 rounded bg-transparent p-0 dark:text-blue-500">{{ 'title.app'|trans }}</a>
+                    <a href="{{ path('app_homepage') }}" class="block p-2 lg:px-3 text-blue-700 rounded bg-transparent p-0">{{ 'title.app'|trans }}</a>
                 </li>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <li class="p-2">
-                        <a href="{{ path('admin') }}" class="block py-2 pl-3 pr-4 rounded bg-transparent p-0 underline dark:text-blue-500 hover:text-blue-600" aria-current="page">{{ 'title.admin'|trans }}</a>
+                        <a href="{{ path('admin') }}" class="block p-2 lg:px-3 rounded bg-transparent p-0 underline hover:text-blue-600" aria-current="page">{{ 'title.admin'|trans }}</a>
                     </li>
                 {% endif %}
                 {% if app.user and is_granted('ROLE_USER') %}
                     <li class="p-2">
-                        <a href="{{ path('app_project_index') }}" class="block py-2 pl-3 pr-4 rounded bg-transparent p-0 underline dark:text-blue-500 hover:text-blue-600" aria-current="page">{{ 'title.projects'|trans }}</a>
+                        <a href="{{ path('app_project_index') }}" class="block p-2 lg:px-3 rounded bg-transparent p-0 underline hover:text-blue-600" aria-current="page">{{ 'title.projects'|trans }}</a>
                     </li>
                 {% endif %}
             </ul>
         </div>
-        <ul class="flex flex-row font-medium rounded-lg bg-white dark:bg-gray-900 dark:border-gray-700 items-center">
+        <ul class="flex flex-row font-medium rounded-lg bg-white items-center">
             {% if app.user %}                
                 <li class="p-3 mr-4 underline">
                     <a href="{{ path('app_logout') }}">{{ 'label.logout'|trans }}</a>
@@ -33,7 +33,7 @@
                     <a href="{{ path('app_register') }}">{{ 'label.register'|trans }}</a>
                 </li>
                 <li class="p-3">
-                    <a href="{{ path('app_login') }}" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded dark:text-blue-500">{{ 'label.login'|trans }}</a>
+                    <a href="{{ path('app_login') }}" class="block p-2 lg:px-3 text-white bg-blue-700 rounded dark:text-blue-500">{{ 'label.login'|trans }}</a>
                 </li>
             {% endif %}
         </ul>
