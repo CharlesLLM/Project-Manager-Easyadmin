@@ -24,7 +24,7 @@ class ProjectCrudController extends AbstractCrudController
             TextEditorField::new('description'),
             AssociationField::new('technologies'),
             DateField::new('updatedAt'),
-            ImageField::new('thumbnailPath')
+            ImageField::new('thumbnailName')
                 ->setUploadDir('public/img/projects')
                 ->setUploadedFileNamePattern('[slug]-[uuid].[extension]')
                 ->setBasePath('img/projects')

@@ -46,7 +46,7 @@ final class Project
     private Collection $technologies;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $thumbnailPath = null;
+    private ?string $thumbnailName = null;
 
     public function __construct()
     {
@@ -183,14 +183,14 @@ final class Project
         return $this;
     }
 
-    public function getThumbnailPath(): ?string
+    public function getThumbnailName(): ?string
     {
-        return $this->thumbnailPath;
+        return $this->thumbnailName;
     }
 
-    public function setThumbnailPath(?string $thumbnailPath): static
+    public function setThumbnailName(?string $thumbnailName): static
     {
-        $this->thumbnailPath = $thumbnailPath;
+        $this->thumbnailName = $thumbnailName;
 
         return $this;
     }
