@@ -28,25 +28,25 @@
                 </div>
                 <div class="w-full py-3 px-1">
                     <div class="mb-6">
-                        <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.category'|trans }}</h3>
+                        <h3 class="project__label">{{ 'project.category'|trans }}</h3>
                         <p>{{ project.category.name }}</p>
                     </div>
                     <div class="mb-6">
-                        <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.description'|trans }}</h3>
+                        <h3 class="project__label">{{ 'project.description'|trans }}</h3>
                         <p>{{ project.description|sanitize_html }}</p>
                     </div>
                     {% if project.link %}
                         <div class="mb-6">
-                            <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.link'|trans }}</h3>
+                            <h3 class="project__label">{{ 'project.link'|trans }}</h3>
                             <a href="{{ project.link }}" class="underline">{{ project.link }}</a>
                         </div>
                     {% endif %}
                     <div class="mb-6">
-                        <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.start_date'|trans }}</h3>
+                        <h3 class="project__label">{{ 'project.start_date'|trans }}</h3>
                         <p>{{ project.startDate|date('d/m/Y') }}</p>
                     </div>
                     <div class="mb-6">
-                        <h3 class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4">{{ 'project.end_date'|trans }}</h3>
+                        <h3 class="project__label">{{ 'project.end_date'|trans }}</h3>
                         <p>{{ project.endDate|date('d/m/Y') }}</p>
                     </div>
                 </div>
