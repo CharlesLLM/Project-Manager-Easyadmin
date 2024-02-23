@@ -1,6 +1,6 @@
 CONSOLE=php bin/console
 
-.PHONY: start up vendor folders db db-diff fixtures cc assets stop
+.PHONY: start up vendor db db-diff fixtures cc assets stop
 
 start: up db cc assets
 
@@ -27,7 +27,5 @@ cc:
 	$(CONSOLE) cache:warmup
 
 assets:
-	$(CONSOLE) asset-map:compile
-
-folders:
 	mkdir -p public/uploads/projects
+	$(CONSOLE) asset-map:compile
