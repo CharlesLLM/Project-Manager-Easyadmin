@@ -19,3 +19,8 @@ Start the server: `make up`
 Stop the server: `make stop`  
 Reload fixtures: `make fixtures`  
 Clear cache: `make cc`  
+Load assets: `make assets`
+
+## File management
+
+The files are stored in the `public/uploads` directory.

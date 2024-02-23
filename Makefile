@@ -1,8 +1,8 @@
 CONSOLE=php bin/console
 
-.PHONY: start up vendor db db-diff fixtures cc stop
+.PHONY: start up vendor db db-diff fixtures cc assets stop
 
-start: up db cc
+start: up db cc assets
 
 up:
 	symfony serve -d --port=8000
@@ -25,3 +25,7 @@ fixtures:
 cc:
 	$(CONSOLE) cache:clear --no-warmup
 	$(CONSOLE) cache:warmup
+
+assets:
+	mkdir -p public/uploads/projects
+	$(CONSOLE) asset-map:compile

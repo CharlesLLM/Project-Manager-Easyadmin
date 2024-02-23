@@ -44,8 +44,8 @@ final class Project
     #[ORM\ManyToMany(targetEntity: Technology::class, inversedBy: 'projects')]
     private Collection $technologies;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?File $thumbnail = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnailName = null;
 
     public function __construct()
     {
@@ -182,14 +182,14 @@ final class Project
         return $this;
     }
 
-    public function getThumbnail(): ?File
+    public function getThumbnailName(): ?string
     {
-        return $this->thumbnail;
+        return $this->thumbnailName;
     }
 
-    public function setThumbnail(?File $thumbnail): static
+    public function setThumbnailName(?string $thumbnailName): static
     {
-        $this->thumbnail = $thumbnail;
+        $this->thumbnailName = $thumbnailName;
 
         return $this;
     }

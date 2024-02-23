@@ -10,7 +10,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 final class UserFixtures extends Fixture
 {
     public const REFERENCE_IDENTIFIER = 'user_';
-    public const FIXTURE_RANGE = 10;
+    public const FIXTURE_RANGE = 5;
 
     public function __construct(private UserPasswordHasherInterface $passwordHasher)
     {
