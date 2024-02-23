@@ -30,4 +30,4 @@ assets:
 	$(CONSOLE) asset-map:compile
 
 folders:
-	mkdir -p public/img/projects
+	mkdir -p public/uploads/projects

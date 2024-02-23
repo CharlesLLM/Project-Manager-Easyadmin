@@ -22,7 +22,7 @@
 
             <section class="w-full lg:w-4/5">
                 <div class="flex items-center gap-4 font-bold break-normal text-gray-700 text-xl mt-12 mb-8 lg:mt-0 md:text-2xl">
-                    {% set filePath = 'img/projects/' ~ project.thumbnailName %}
+                    {% set filePath = 'uploads/projects/' ~ project.thumbnailName %}
                     <img src="{{ asset(filePath) }}" alt="{{ project.thumbnailName }}" class="max-w-32 max-h-16 w-auto h-auto">
                     <h1>{{ project.name }}</h1>
                 </div>
