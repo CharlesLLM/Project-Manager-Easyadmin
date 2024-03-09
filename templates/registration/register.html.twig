@@ -24,11 +24,15 @@
                     <div class="divide-y divide-gray-200">
                         {{ form_start(registrationForm) }}
                         <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                            <div class="relative mb-8">
-                                {{ form_row(registrationForm.email) }}
+                            <div class="relative mb-6">
+                                {{ form_widget(registrationForm.email) }}
+                                {{ form_label(registrationForm.email) }}
+                                {{ form_errors(registrationForm.email) }}
                             </div>
-                            <div class="relative mb-8">
-                                {{ form_row(registrationForm.plainPassword) }}
+                            <div class="relative mb-6">
+                                {{ form_widget(registrationForm.plainPassword) }}
+                                {{ form_label(registrationForm.plainPassword) }}
+                                {{ form_errors(registrationForm.plainPassword) }}
                             </div>
                             <div class="relative">
                                 <button class="bg-purple-500 hover:bg-purple-600 text-white rounded-md px-4 py-2" type="submit" name="submit">{{ 'label.register'|trans }}</button>

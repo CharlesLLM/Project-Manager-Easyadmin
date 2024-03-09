@@ -20,22 +20,24 @@ class RegistrationFormType extends AbstractType
             ->add('email', TextType::class, [
                 'label' => 'common.email',
                 'label_attr' => [
-                    'class' => 'absolute left-0 -top-5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm'
+                    'class' => 'login__label peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm',
                 ],
                 'attr' => [
                     'autocomplete' => 'email',
-                    'class' => 'peer text-base placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600'
+                    'class' => 'login__input peer placeholder-transparent',
+                    'placeholder' => 'common.email',
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 'label' => 'common.password',
                 'label_attr' => [
-                    'class' => 'absolute left-0 -top-5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm'
+                    'class' => 'login__label peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm',
                 ],
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'class' => 'peer text-base placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600'
+                    'class' => 'login__input peer placeholder-transparent',
+                    'placeholder' => 'common.password',
                 ],
                 'constraints' => [
                     new NotBlank([

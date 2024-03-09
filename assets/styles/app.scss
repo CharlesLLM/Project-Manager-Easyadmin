@@ -18,7 +18,7 @@ body {
 }
 
 .login {
-  &__label {
+  &__input {
     height: 2.5rem;
     width: 100%;
     border-bottom-width: 2px;
@@ -30,7 +30,7 @@ body {
     }
   }
 
-  &__input {
+  &__label {
     position: absolute;
     left: 0;
     top: -0.875rem;
@@ -40,6 +40,7 @@ body {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+    cursor: text;
   }
 }
 
