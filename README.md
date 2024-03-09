@@ -2,7 +2,7 @@
 
 This is a simple project manager.
 
-Stack: Symfony 7.0, EasyAdmin 4
+Stack: Symfony 7.0, EasyAdmin 4, TailwindCSS 3.4
 
 ## Installation
 
