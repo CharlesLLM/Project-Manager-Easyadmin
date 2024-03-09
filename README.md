@@ -21,6 +21,15 @@ Reload fixtures: `make fixtures`
 Clear cache: `make cc`  
 Load assets: `make assets`
 
+## List of users for testing
+
+| Email                       | Password | Roles                                    |
+| --------------------------- | -------- | ---------------------------------------- |
+| `user1@test.fr`             | `admin`  | ROLE_ADMIN                               |
+| `user{2..5}@test.fr`        | `user`   | ROLE_USER                                |
+
+These users are created with the fixtures. You can find all the fixtures in the `src/DataFixtures` folder.
+
 ## File management
 
 The files are stored in the `public/uploads` directory.

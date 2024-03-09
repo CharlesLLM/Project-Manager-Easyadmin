@@ -19,15 +19,15 @@ final class UserFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         foreach (range(1, self::FIXTURE_RANGE) as $i) {
-            $isAdmin = $i === 1 ? 'admin' : 'user';
+            $mainRole = $i === 1 ? 'admin' : 'user';
             $user = new User();
             $user
                 ->setEmail('user'.$i.'@test.fr')
-                ->setPassword($this->passwordHasher->hashPassword($user, $isAdmin)) // admin password is 'admin' and user password is 'user'
+                ->setPassword($this->passwordHasher->hashPassword($user, $mainRole)) // admin password is 'admin' and user password is 'user'
                 ->setRoles(['ROLE_USER'])
             ;
 
-            if ($isAdmin === 'admin') {
+            if ($mainRole === 'admin') {
                 $user->addRole('ROLE_ADMIN');
             }
 
