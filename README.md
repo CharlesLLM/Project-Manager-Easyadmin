@@ -17,6 +17,7 @@ And then go to [http://localhost:8000](http://localhost:8000)
 
 Start the server: `make up`  
 Stop the server: `make stop`  
+Recreate the database: `make db`  
 Reload fixtures: `make fixtures`  
 Clear cache: `make cc`  
 Load assets: `make assets`
