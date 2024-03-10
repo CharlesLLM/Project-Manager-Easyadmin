@@ -10,14 +10,14 @@ final class TechnologyFixtures extends Fixture
 {
     public const REFERENCE_IDENTIFIER = 'technology_';
     public const TECHNOLOGIES = [
-        "HTML/CSS",
-        "PHP",
-        "JavaScript",
-        "Python",
-        "Symfony",
-        "React",
-        "Vue",
-        "Angular"
+        'HTML/CSS',
+        'PHP',
+        'JavaScript',
+        'Python',
+        'Symfony',
+        'React',
+        'Vue',
+        'Angular',
     ];
 
     public function load(ObjectManager $manager): void

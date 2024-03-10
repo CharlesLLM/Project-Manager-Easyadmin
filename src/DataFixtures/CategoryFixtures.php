@@ -13,7 +13,7 @@ final class CategoryFixtures extends Fixture
         'Projet personnel',
         'E-Commerce',
         'Application mobile',
-        'Veille technologique'
+        'Veille technologique',
     ];
 
     public function load(ObjectManager $manager): void
@@ -25,7 +25,7 @@ final class CategoryFixtures extends Fixture
 
             $manager->persist($category);
             $this->setReference(self::REFERENCE_IDENTIFIER.$i, $category);
-            $i++;
+            ++$i;
         }
 
         $manager->flush();

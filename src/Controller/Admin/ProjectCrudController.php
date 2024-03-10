@@ -29,7 +29,7 @@ class ProjectCrudController extends AbstractCrudController
             ImageField::new('thumbnailName', 'project.thumbnail')
                 ->setUploadDir('public/uploads/projects')
                 ->setUploadedFileNamePattern('[slug]-[uuid].[extension]')
-                ->setBasePath('uploads/projects')
+                ->setBasePath('uploads/projects'),
         ];
     }
 }
