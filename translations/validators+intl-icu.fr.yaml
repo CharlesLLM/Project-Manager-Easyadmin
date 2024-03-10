@@ -1,0 +1,3 @@
+errors:
+    email: L'adresse mail n'est pas valide
+    unique_email: Il existe déjà un compte avec cette adresse mail

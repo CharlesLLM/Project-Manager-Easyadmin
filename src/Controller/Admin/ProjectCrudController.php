@@ -20,11 +20,13 @@ class ProjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name'),
-            TextEditorField::new('description'),
-            AssociationField::new('technologies'),
-            DateField::new('updatedAt'),
-            ImageField::new('thumbnailName')
+            TextField::new('name', 'project.name'),
+            TextEditorField::new('description', 'project.description'),
+            AssociationField::new('category', 'project.category'),
+            AssociationField::new('technologies', 'project.technologies'),
+            DateField::new('startDate', 'project.start_date'),
+            DateField::new('endDate', 'project.end_date'),
+            ImageField::new('thumbnailName', 'project.thumbnail')
                 ->setUploadDir('public/uploads/projects')
                 ->setUploadedFileNamePattern('[slug]-[uuid].[extension]')
                 ->setBasePath('uploads/projects')

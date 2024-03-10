@@ -42,6 +42,11 @@ body {
   }
 }
 
+form[name="registration_form"] ul li  {
+  color: red;
+  font-size: 0.875rem;
+}
+
 .register__svg {
   width: 0.875rem;
   height: 0.875rem;

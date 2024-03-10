@@ -24,6 +24,7 @@ label:
         lowercase: "Au moins une minuscule"
         number: "Au moins un chiffre"
         special: "Au moins un caractère spécial, (ex: , ! @ # ?)"
+    invalid_credentials: Identifiants invalides
 
 # Project
 project:

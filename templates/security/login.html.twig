@@ -17,7 +17,7 @@
                     {% if error %}
                         <div role="alert">
                             <div class="border border-l-4 border-red-400 rounded bg-red-100 px-4 py-3 mt-4 text-red-700">
-                                <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+                                <p>{{ 'label.invalid_credentials'|trans }}</p>
                             </div>
                         </div>
                     {% endif %}

@@ -44,7 +44,7 @@ final class Project
     #[ORM\ManyToMany(targetEntity: Technology::class, inversedBy: 'projects')]
     private Collection $technologies;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $thumbnailName = null;
 
     public function __construct()
