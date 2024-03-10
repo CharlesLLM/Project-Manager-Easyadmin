@@ -16,7 +16,7 @@ vendor:
 db:
 	$(CONSOLE) doctrine:database:drop --if-exists --force
 	$(CONSOLE) doctrine:database:create --if-not-exists
-	$(CONSOLE) doctrine:schema:update --force --complete
+	$(CONSOLE) doctrine:migrations:migrate -n
 	$(CONSOLE) doctrine:fixtures:load -n
 
 fixtures:
