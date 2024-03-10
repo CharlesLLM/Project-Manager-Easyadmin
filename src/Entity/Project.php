@@ -57,12 +57,12 @@ final class Project
         return $this->name;
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -74,7 +74,7 @@ final class Project
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -98,7 +98,7 @@ final class Project
         return $this;
     }
 
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): \DateTimeInterface
     {
         return $this->startDate;
     }
@@ -122,7 +122,7 @@ final class Project
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): \DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -134,7 +134,7 @@ final class Project
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): \DateTimeInterface
     {
         return $this->updatedAt;
     }
@@ -151,7 +151,7 @@ final class Project
         return $this->category;
     }
 
-    public function setCategory(?Category $category): static
+    public function setCategory(Category $category): static
     {
         $this->category = $category;
 
@@ -182,12 +182,12 @@ final class Project
         return $this;
     }
 
-    public function getThumbnailName(): ?string
+    public function getThumbnailName(): string
     {
         return $this->thumbnailName;
     }
 
-    public function setThumbnailName(?string $thumbnailName): static
+    public function setThumbnailName(string $thumbnailName): static
     {
         $this->thumbnailName = $thumbnailName;
 

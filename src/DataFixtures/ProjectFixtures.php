@@ -2,7 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
 use App\Entity\Project;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -17,22 +16,24 @@ final class ProjectFixtures extends Fixture implements DependentFixtureInterface
             "link" => "https://github.com/CharlesLLM/Project-Manager-Easyadmin",
             "start_date" => "2024-02-15",
             "end_date" => "2024-03-11",
-            "category" => "category_3",
+            "category" => "3",
             "technologies" => [
-                "technology_0",
-                "technology_1",
-                "technology_4",
+                "0",
+                "1",
+                "4",
             ],
+            "thumbnail" => "symfony.png"
         ],
         "POC React" => [
             "description" => "Proof of concept React",
             "start_date" => "2024-02-13",
-            "category" => "category_3",
+            "category" => "3",
             "technologies" => [
-                "technology_0",
-                "technology_2",
-                "technology_5",
+                "0",
+                "2",
+                "5",
             ],
+            "thumbnail" => "maraiste.jpg"
         ],
     ];
 
@@ -48,10 +49,16 @@ final class ProjectFixtures extends Fixture implements DependentFixtureInterface
                 ->setEndDate(isset($value["end_date"]) ? new \DateTime($value["end_date"]) : null)
                 ->setCreatedAt(new \DateTime())
                 ->setUpdatedAt(new \DateTime())
-                ->setCategory($this->getReference($value["category"]));
+                ->setCategory($this->getReference(CategoryFixtures::REFERENCE_IDENTIFIER.$value["category"]));
+
+            $newFilePath = __DIR__.'/../../public/uploads/projects/'.$value["thumbnail"];
+            if (!file_exists($newFilePath)) {
+                copy(__DIR__.'/Data/'.$value["thumbnail"], $newFilePath);
+            }
+            $project->setThumbnailName($value["thumbnail"]);
 
             foreach ($value["technologies"] as $technology) {
-                $project->addTechnology($this->getReference($technology));
+                $project->addTechnology($this->getReference(TechnologyFixtures::REFERENCE_IDENTIFIER.$technology));
             }
 
             $manager->persist($project);

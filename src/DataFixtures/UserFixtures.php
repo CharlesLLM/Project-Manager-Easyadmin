@@ -23,7 +23,7 @@ final class UserFixtures extends Fixture
             $user = new User();
             $user
                 ->setEmail('user'.$i.'@test.fr')
-                ->setPassword($this->passwordHasher->hashPassword($user, $mainRole)) // admin password is 'admin' and user password is 'user'
+                ->setPassword($this->passwordHasher->hashPassword($user, $mainRole === 'admin' ? 'Admin123!' : 'User123!'))
                 ->setRoles(['ROLE_USER'])
             ;
 
