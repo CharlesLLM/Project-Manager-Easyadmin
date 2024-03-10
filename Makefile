@@ -1,8 +1,8 @@
 CONSOLE=php bin/console
 
-.PHONY: start up vendor db db-diff fixtures cc assets stop
+.PHONY: start up vendor db fixtures cc assets stop
 
-start: vendor up db cc assets
+start: vendor up assets db cc assets
 
 up:
 	symfony serve -d --port=8000
