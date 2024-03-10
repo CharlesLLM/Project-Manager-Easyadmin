@@ -6,21 +6,34 @@ Stack: Symfony 7.0, EasyAdmin 4, TailwindCSS 3.4
 
 ## Installation
 
+### 1. Get sources
 ```bash
 git clone git@github.com:CharlesLLM/Project-Manager-Easyadmin.git
-cd Project-Manager-Easyadmin
+```
+
+### 2. Environment variables
+Create a `.env.local` file to override the values in the .env file.
+
+### 3. Start the project
+```bash
 make start
 ```
-And then go to [http://localhost:8000](http://localhost:8000)
+
+### 4. Go to [http://localhost:8000](http://localhost:8000)
 
 ## Usage
 
-Start the server: `make up`  
-Stop the server: `make stop`  
-Recreate the database: `make db`  
-Reload fixtures: `make fixtures`  
-Clear cache: `make cc`  
-Load assets: `make assets`
+*Make Commands* :
+
+| Command     | Usage                            |
+| ----------- | -------------------------------- |
+| make start  | Start the project                |
+| make up     | Start the server                 |
+| make stop   | Stop the server                  |
+| make db     | Init database with data fixtures |
+| make cc     | Clear cache                      |
+| make assets | Regenerate assets files          |
+| make vendor | Install dependencies             |
 
 ## List of users for testing
 
